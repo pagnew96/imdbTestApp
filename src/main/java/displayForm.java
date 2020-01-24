@@ -290,10 +290,17 @@ public class displayForm extends javax.swing.JFrame implements ActionListener {
         pack();
     }
 
+    //todo add function to get our array to work with with ratings taken into effect
+    // add function to populate the display area,
+    // add the switch case functionality and once thats done its cleanup time and were done
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        String cmd = e.getActionCommand();
+        switch (cmd) {
+            case "back":
 
+        }
     }
 
     public Person getPerson() {
