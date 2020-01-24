@@ -60,8 +60,6 @@ public class meanMovieAdviser {
         }
     }
 
-    //todo change this function to only take in a SearchPeople and then change the name of function to more appropriate
-    // cahnge pearson search and affected methods to return and handle  result[]
     public Result[] personSearch(String name) {
         //System.out.println(searchPersonRequestString(name));
         SearchPeople response = Unirest.get(searchPersonRequestString(name))
