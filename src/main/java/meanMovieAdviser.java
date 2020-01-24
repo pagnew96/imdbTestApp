@@ -8,15 +8,13 @@ public class meanMovieAdviser {
     private String name;
     private String inputName = null;
     private String temp = null;
-    private String id;
 
     public meanMovieAdviser() {
-        this.setId(null);
         this.setTemp(null);
         this.setInputName(null);
     }
 
-    public Person mapPerson() {
+    public Person mapPerson(String id) {
         Person person = Unirest.get(searchPersonMoviesString(id))
                 .asObject(Person.class).getBody();
         Unirest.shutDown();
@@ -56,17 +54,15 @@ public class meanMovieAdviser {
             // this removes any errors by adding extra spaces in the input.
             setTemp(inputName.replaceAll("^\\s+", ""));
             String name = getTemp().replaceAll("[^\\w]+", " ");
-            System.out.println(name);
             setName(name);
 
             return null;
         }
     }
 
-    //todo change this function to only take in a SearchPeople and then
-    // return the id of the searchPerson chosen
-    public Result personsId(String name) {
-        int i = 1;
+    //todo change this function to only take in a SearchPeople and then change the name of function to more appropriate
+    // cahnge pearson search and affected methods to return and handle  result[]
+    public Result[] personSearch(String name) {
         //System.out.println(searchPersonRequestString(name));
         SearchPeople response = Unirest.get(searchPersonRequestString(name))
                 .asObject(SearchPeople.class).getBody();
@@ -74,26 +70,10 @@ public class meanMovieAdviser {
 
         Result[] results = response.getResults();
 
-        System.out.println(results.length);
         if (results.length == 0) {
             return null;
-        } else if (results.length == 1) {
-            return results[0];
-        } else {
-            return results[i];
-        }
-
-
-//        todo move this to home and add if result = 0 then error message
-//        if (id.equals("age")) {
-//            result = "## The handicap you were looking for either A: is spelt wrong, \n" +
-//                    "## B: Isn't on the database im pulling this shit off or \n" +
-//                    "## C: doesn't exist try again you useless piece of shit.";
-//            return result;
-//        } else {
-//            setId(id);
-//        }
-//        return result;
+        } else
+            return results;
     }
 
 
@@ -136,10 +116,6 @@ public class meanMovieAdviser {
         this.name = name;
     }
 
-    public String getInputName() {
-        return inputName;
-    }
-
     public void setInputName(String inputName) {
         this.inputName = inputName;
     }
@@ -151,13 +127,4 @@ public class meanMovieAdviser {
     public void setTemp(String temp) {
         this.temp = temp;
     }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
 }

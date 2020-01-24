@@ -1,11 +1,32 @@
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class resultChoice extends javax.swing.JFrame {
+public class resultChoice extends javax.swing.JFrame implements ActionListener {
+
+    private javax.swing.JTextArea displayText;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton returnButton;
+    private JComboBox<String> userChoice;
+    private Result[] results;
+    private meanMovieAdviser prick;
+    private boolean directorFlag;
+    private int low, high;
+
 
     /**
      * Creates new form resultChoice
      */
-    public resultChoice() {
+    public resultChoice(Result[] results, meanMovieAdviser prick, boolean directorFlag, int low, int high) {
+        this.setResults(results);
+        this.setPrick(prick);
+        this.setDirectorFlag(directorFlag);
+        this.setLow(low);
+        this.setHigh(high);
+
         initComponents();
         setResizable(false);
     }
@@ -23,7 +44,7 @@ public class resultChoice extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         displayText = new javax.swing.JTextArea();
-        userChoice = new java.awt.Choice();
+        userChoice = new JComboBox<>();
         returnButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -75,11 +96,12 @@ public class resultChoice extends javax.swing.JFrame {
 
         returnButton.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         returnButton.setText("Search");
-        returnButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                returnButtonActionPerformed(evt);
-            }
-        });
+        returnButton.addActionListener(this);
+        returnButton.setActionCommand("search");
+
+        for (Result r : results) {
+            userChoice.addItem(r.getName());
+        }
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -111,46 +133,38 @@ public class resultChoice extends javax.swing.JFrame {
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 360, 260));
 
         pack();
-    }// </editor-fold>
-
-
-    private void returnButtonActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
     }
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException | InstantiationException |
-                IllegalAccessException | UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(resultChoice.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getActionCommand().equals("search")) {
+            int index = userChoice.getSelectedIndex();
+            Person person = prick.mapPerson(Integer.toString(results[index].getId()));
+            prick.printCast(person.getCast());
+            new displayForm(person, directorFlag, low, high).setVisible(true);
+            this.setVisible(false);
         }
-        //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new resultChoice().setVisible(true));
     }
 
-    // Variables declaration - do not modify
-    private javax.swing.JTextArea displayText;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton returnButton;
-    private java.awt.Choice userChoice;
-    // End of variables declaration
+    public void setResults(Result[] results) {
+        this.results = results;
+    }
+
+    public void setPrick(meanMovieAdviser prick) {
+        this.prick = prick;
+    }
+
+    public void setDirectorFlag(boolean directorFlag) {
+        this.directorFlag = directorFlag;
+    }
+
+    public void setLow(int low) {
+        this.low = low;
+    }
+
+    public void setHigh(int high) {
+        this.high = high;
+    }
 }
+

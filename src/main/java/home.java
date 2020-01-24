@@ -28,6 +28,11 @@ public class home extends javax.swing.JFrame implements ActionListener {
     private Boolean directorFlag = false;
     private Boolean singleNumberRating = false;
 
+    final String emptySearchResult = "## You caused the program to shit the bed good going dumbass,\n" +
+            "## One of the following is the reason why:\n" +
+            "## A: The Person you searched is not on the TMDB database.\n" +
+            "## B: You cant spell for shit (Most likely the reason)";
+
 
     /**
      * Creates new form NewJFrame
@@ -86,7 +91,7 @@ public class home extends javax.swing.JFrame implements ActionListener {
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel1.setText("Mean Movie Advisor ");
+        jLabel1.setText("Mean Movie Adviser ");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -336,9 +341,8 @@ public class home extends javax.swing.JFrame implements ActionListener {
                 break;
             case "search":
                 meanMovieAdviser prick = new meanMovieAdviser();
-                Person person = new Person();
-                Result result = new Result(0, null,
-                        null, 0, null, false, null, 0);
+                Person person;
+                Result[] result;
 
                 for (int i = 0; i < boxes.length; i++) {
                     if (boxes[i].isSelected() && singleNumberRating) {
@@ -354,21 +358,23 @@ public class home extends javax.swing.JFrame implements ActionListener {
 
                 error = prick.personsName(userInput.getText());
                 if (error == null) {
-                    result = prick.personsId(prick.getName());
+                    if (prick.personSearch(prick.getName()) != null) {
+                        result = prick.personSearch(prick.getName());
+                        if (result.length == 1) {
+                            person = prick.mapPerson(Integer.toString(result[0].getId()));
+                            prick.printCast(person.getCast());
+                            new displayForm(person, directorFlag, low, high).setVisible(true);
+                            this.setVisible(false);
+                        } else {
+                            new resultChoice(result, prick, directorFlag, low, high).setVisible(true);
+                            this.setVisible(false);
+                        }
+                    } else
+                        userDisplay.setText(emptySearchResult);
                 } else {
                     userDisplay.setText(error);
                     break;
                 }
-
-//                if (check.equals("1")){
-//                    person = prick.mapPerson();
-//                    //prick.printCast(person.getCast());
-//                    new displayForm(person, directorFlag, low, high).setVisible(true);
-//                    this.setVisible(false);
-//                } else {
-//                    userDisplay.setText(check);
-//                    break;
-//                }
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + cmd);
