@@ -1,7 +1,11 @@
+import kong.unirest.Unirest;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Padraic
@@ -12,37 +16,6 @@ public class displayForm extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JButton forwardButton;
     private javax.swing.JButton backButton;
     private javax.swing.JButton searchButton;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
 
@@ -50,6 +23,9 @@ public class displayForm extends javax.swing.JFrame implements ActionListener {
     private Boolean crewFlag;
     private int rangeLow;
     private int rangeHigh;
+    private int movieCounter = 0;
+    private int rangeMovieLength;
+    private genre[] genres;
 
     /**
      * Creates new form displayForm
@@ -61,6 +37,7 @@ public class displayForm extends javax.swing.JFrame implements ActionListener {
         this.setRangeHigh(rangeHigh);
 
         initComponents();
+        this.setVisible(true);
     }
 
     /**
@@ -70,37 +47,37 @@ public class displayForm extends javax.swing.JFrame implements ActionListener {
      */
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        JPanel jPanel1 = new JPanel();
+        JLabel jLabel1 = new JLabel();
+        JLabel jLabel2 = new JLabel();
+        JLabel jLabel3 = new JLabel();
+        JLabel jLabel4 = new JLabel();
+        JLabel jLabel5 = new JLabel();
+        JLabel jLabel6 = new JLabel();
+        JLabel jLabel7 = new JLabel();
+        JLabel jLabel8 = new JLabel();
+        JLabel jLabel9 = new JLabel();
+        JLabel jLabel10 = new JLabel();
+        JLabel jLabel11 = new JLabel();
+        JLabel jLabel12 = new JLabel();
+        JLabel jLabel13 = new JLabel();
+        JLabel jLabel14 = new JLabel();
+        JLabel jLabel15 = new JLabel();
+        JLabel jLabel16 = new JLabel();
+        JLabel jLabel17 = new JLabel();
+        JLabel jLabel18 = new JLabel();
+        JLabel jLabel19 = new JLabel();
+        JLabel jLabel20 = new JLabel();
+        JLabel jLabel21 = new JLabel();
+        JLabel jLabel22 = new JLabel();
+        JLabel jLabel23 = new JLabel();
+        JLabel jLabel24 = new JLabel();
+        JLabel jLabel25 = new JLabel();
+        JLabel jLabel26 = new JLabel();
+        JLabel jLabel27 = new JLabel();
+        JLabel jLabel28 = new JLabel();
+        JLabel jLabel29 = new JLabel();
+        JPanel jPanel2 = new JPanel();
         forwardButton = new javax.swing.JButton();
         backButton = new javax.swing.JButton();
         searchButton = new javax.swing.JButton();
@@ -221,6 +198,11 @@ public class displayForm extends javax.swing.JFrame implements ActionListener {
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jTextArea1.setEditable(false);
+        jTextArea1.setLineWrap(true);
+        jTextArea1.setWrapStyleWord(true);
+        Font f = jTextArea1.getFont();
+        Font f1 = new Font(f.getFontName(), f.getStyle(), f.getSize() + 4);
+        jTextArea1.setFont(f1);
         jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -287,7 +269,86 @@ public class displayForm extends javax.swing.JFrame implements ActionListener {
                                         .addContainerGap()))
         );
 
+        genreSearch response = Unirest.get("https://api.themoviedb.org/3/genre/movie/list?" +
+                "api_key=a13aa4b431ad2e32be56ad47bcb70469&language=en-US")
+                .asObject(genreSearch.class).getBody();
+        Unirest.shutDown();
+
+        genres = response.getGenres();
+        for (genre genre : genres)
+            System.out.println(genre.getName());
+
+        if (crewFlag) {
+            Crew[] movies = getRangeCrew(person, rangeHigh, rangeLow);
+            printCrew(movies[movieCounter]);
+        } else {
+            Cast[] movies = getRangeCast(person, rangeHigh, rangeLow);
+            printCast(movies[movieCounter]);
+        }
+
         pack();
+        this.setLocationRelativeTo(null);
+    }
+
+    private Cast[] getRangeCast(Person person, int high, int low) {
+        List<Cast> rangedMoviesList = new ArrayList<>();
+        Cast[] movies = person.getCast();
+        int i = 0;
+
+        for (Cast c : movies) {
+            if ((int) c.getVote_average() >= low && (int) c.getVote_average() <= high) {
+                rangedMoviesList.add(c);
+                i++;
+            }
+        }
+
+        Cast[] rangeMovies = rangedMoviesList.toArray(new Cast[rangedMoviesList.size()]);
+        rangeMovieLength = rangeMovies.length;
+
+        return rangeMovies;
+    }
+
+    private Crew[] getRangeCrew(Person person, int high, int low) {
+        List<Crew> rangedMoviesList = new ArrayList<>();
+        Crew[] movies = person.getCrew();
+        int i = 0;
+
+        for (Crew c : movies) {
+            if ((int) c.getVote_average() >= low && (int) c.getVote_average() <= high) {
+                rangedMoviesList.add(c);
+                i++;
+            }
+        }
+
+        Crew[] rangeMovies = rangedMoviesList.toArray(new Crew[rangedMoviesList.size()]);
+        rangeMovieLength = rangeMovies.length;
+
+        return rangeMovies;
+    }
+
+    private void printCast(Cast movie) {
+        int[] genreId = movie.getGenre_ids();
+        jTextArea1.setText("");
+
+        jTextArea1.append("The title of the movie: " + movie.getTitle() + "\n\n");
+        jTextArea1.append("Movie genres: ");
+        for (int i = 0; i < genreId.length; i++) {
+            for (genre genre : genres) {
+                if (genreId[i] == genre.getId()) {
+                    jTextArea1.append(genre.getName() + ", ");
+                }
+            }
+        }
+        jTextArea1.append("\n\n");
+        jTextArea1.append("An overview of the movie: " + movie.getOverview() + "\n\n");
+        jTextArea1.append("Average rating out of 10: " + movie.getVote_average() + "/10" + "\n");
+
+    }
+
+    private void printCrew(Crew movies) {
+        jTextArea1.append("The title of the movie: ");
+        jTextArea1.append(movies.getTitle());
+        jTextArea1.append(Integer.toString(rangeMovieLength));
     }
 
     //todo add function to get our array to work with with ratings taken into effect

@@ -1,22 +1,22 @@
 public class genre {
-    private int genre;
+    private int id;
     private String name;
 
-    public genre(int genre, String name) {
-        this.genre = genre;
+    public genre(int id, String name) {
+        this.id = id;
         this.name = name;
     }
 
-    public int getGenre() {
-        return genre;
+    public int getId() {
+        return id;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setGenre(int genre) {
-        this.genre = genre;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setName(String name) {

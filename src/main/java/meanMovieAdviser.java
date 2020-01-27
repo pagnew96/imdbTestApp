@@ -27,7 +27,7 @@ public class meanMovieAdviser {
         System.out.println("**********");
         for (Cast cast : casts) {
             //printRating(cast);
-            System.out.println(cast.getTitle());
+            //System.out.println(cast.getId());
         }
     }
 

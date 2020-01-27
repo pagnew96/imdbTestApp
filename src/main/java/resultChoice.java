@@ -28,6 +28,7 @@ public class resultChoice extends javax.swing.JFrame implements ActionListener {
         this.setHigh(high);
 
         initComponents();
+        this.setVisible(true);
         setResizable(false);
     }
 
@@ -133,6 +134,7 @@ public class resultChoice extends javax.swing.JFrame implements ActionListener {
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 360, 260));
 
         pack();
+        this.setLocationRelativeTo(null);
     }
 
     @Override

@@ -280,6 +280,7 @@ public class home extends javax.swing.JFrame implements ActionListener {
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 70, 520, 440));
 
         pack();
+        this.setLocationRelativeTo(null);
     }
 
 
@@ -363,10 +364,10 @@ public class home extends javax.swing.JFrame implements ActionListener {
                         if (result.length == 1) {
                             person = prick.mapPerson(Integer.toString(result[0].getId()));
                             prick.printCast(person.getCast());
-                            new displayForm(person, directorFlag, low, high).setVisible(true);
+                            new displayForm(person, directorFlag, low, high);
                             this.setVisible(false);
                         } else {
-                            new resultChoice(result, prick, directorFlag, low, high).setVisible(true);
+                            new resultChoice(result, prick, directorFlag, low, high);
                             this.setVisible(false);
                         }
                     } else
