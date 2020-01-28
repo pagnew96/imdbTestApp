@@ -16,7 +16,7 @@ public class meanMovieAdviser {
             "## One of the following is the reason why:\n" +
             "## A: The Person you searched is not on the TMDB database.\n" +
             "## B: You cant spell for shit (Most likely the reason)";
-    final static String notDirString = " ## Why can you not follow simple instructions you pleb.\n" +
+    final static String notDirString = "## Why can you not follow simple instructions you pleb.\n" +
             "## One of the following issues arose:\n" +
             "## A: The person you searched isn't a director so uncheck that u idiotic peice of human shit.\n" +
             "## B: There are no movies in the range you searched for.";
@@ -60,7 +60,6 @@ public class meanMovieAdviser {
     }
 
     public static Result[] personSearch(String name) {
-        //System.out.println(searchPersonRequestString(name));
         SearchPeople response = Unirest.get(searchPersonRequestString(name))
                 .asObject(SearchPeople.class).getBody();
         Unirest.shutDown();
@@ -116,7 +115,10 @@ public class meanMovieAdviser {
         Cast[] rangeMovies = rangedMoviesList.toArray(new Cast[rangedMoviesList.size()]);
         rangeMovieLength = rangeMovies.length;
 
-        return rangeMovies;
+        if (rangeMovies.length == 0)
+            return null;
+        else
+            return rangeMovies;
     }
 
     public static Crew[] getRangeCrew(Person person, int high, int low) {
@@ -134,7 +136,10 @@ public class meanMovieAdviser {
         Crew[] rangeMovies = rangedMoviesList.toArray(new Crew[rangedMoviesList.size()]);
         rangeMovieLength = rangeMovies.length;
 
-        return rangeMovies;
+        if (rangeMovies.length == 0)
+            return null;
+        else
+            return rangeMovies;
     }
 
     public static String getName() {

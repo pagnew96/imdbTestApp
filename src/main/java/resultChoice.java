@@ -1,15 +1,11 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class resultChoice extends javax.swing.JFrame implements ActionListener {
 
     private javax.swing.JTextArea displayText;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton returnButton;
     private JComboBox<String> userChoice;
     private Result[] results;
     private boolean directorFlag;
@@ -38,13 +34,14 @@ public class resultChoice extends javax.swing.JFrame implements ActionListener {
 
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        JPanel jPanel1 = new JPanel();
+        JPanel jPanel2 = new JPanel();
+        JPanel jPanel3 = new JPanel();
+        JScrollPane jScrollPane1 = new JScrollPane();
         displayText = new javax.swing.JTextArea();
         userChoice = new JComboBox<>();
-        returnButton = new javax.swing.JButton();
+        JButton returnButton = new JButton();
+        JButton newSearchButton = new JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -84,7 +81,7 @@ public class resultChoice extends javax.swing.JFrame implements ActionListener {
         displayText.setEditable(false);
         displayText.setBackground(new java.awt.Color(245, 247, 253));
         displayText.setColumns(20);
-        displayText.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        displayText.setFont(new java.awt.Font("Times New Roman", Font.BOLD, 14)); // NOI18N
         displayText.setLineWrap(true);
         displayText.setRows(5);
         displayText.setText("The name you entered returned multiple results so either you can't spell, like a dumbass. Or there may be multiple people with that name what a shocker. Or you entered something ominously vaugue. \nPlease choose the Actor or director you were trying to search:");
@@ -93,10 +90,15 @@ public class resultChoice extends javax.swing.JFrame implements ActionListener {
         displayText.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
         jScrollPane1.setViewportView(displayText);
 
-        returnButton.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        returnButton.setFont(new java.awt.Font("Times New Roman", Font.BOLD, 14));
         returnButton.setText("Search");
         returnButton.addActionListener(this);
         returnButton.setActionCommand("search");
+
+        newSearchButton.setFont(new java.awt.Font("Times New Roman", Font.BOLD, 14));
+        newSearchButton.setText("New Search");
+        newSearchButton.addActionListener(this);
+        newSearchButton.setActionCommand("newSearch");
 
         for (Result r : results) {
             userChoice.addItem(r.getName());
@@ -113,9 +115,10 @@ public class resultChoice extends javax.swing.JFrame implements ActionListener {
                                         .addComponent(userChoice, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addContainerGap())
                         .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(103, 103, 103)
+                                .addGap(30, 30, 30)
                                 .addComponent(returnButton, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(20, 20, 20)
+                                .addComponent(newSearchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel3Layout.setVerticalGroup(
                 jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -125,8 +128,10 @@ public class resultChoice extends javax.swing.JFrame implements ActionListener {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(userChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(27, 27, 27)
-                                .addComponent(returnButton, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
-                                .addGap(24, 24, 24))
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(returnButton, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+                                        .addComponent(newSearchButton, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE))
+                        )
         );
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 360, 260));
@@ -137,24 +142,36 @@ public class resultChoice extends javax.swing.JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getActionCommand().equals("search")) {
-            int index = userChoice.getSelectedIndex();
-            Person person = meanMovieAdviser.mapPerson(Integer.toString(results[index].getId()));
-            if (directorFlag) {
-                if (meanMovieAdviser.getRangeCrew(person, high, low) != null) {
-                    new displayForm(person, directorFlag, low, high);
-                    this.setVisible(false);
+        String cmd = e.getActionCommand();
+        int index = userChoice.getSelectedIndex();
+        Person person = meanMovieAdviser.mapPerson(Integer.toString(results[index].getId()));
+
+        switch (cmd) {
+            case "search":
+                if (directorFlag) {
+                    if (meanMovieAdviser.getRangeCrew(person, high, low) != null) {
+                        new displayForm(person, directorFlag, low, high);
+                        this.setVisible(false);
+                    } else {
+                        displayText.setText(meanMovieAdviser.notDirString);
+                    }
                 } else {
-                    displayText.setText(meanMovieAdviser.notDirString);
+                    if (meanMovieAdviser.getRangeCast(person, high, low) != null) {
+                        new displayForm(person, directorFlag, low, high);
+                        this.setVisible(false);
+                    } else {
+                        displayText.setText(meanMovieAdviser.notActorString);
+                    }
                 }
-            } else {
-                if (meanMovieAdviser.getRangeCast(person, high, low) != null) {
-                    new displayForm(person, directorFlag, low, high);
-                    this.setVisible(false);
-                } else {
-                    displayText.setText(meanMovieAdviser.notActorString);
-                }
-            }
+                break;
+
+            case "newSearch":
+                new home().setVisible(true);
+                this.setVisible(false);
+                break;
+
+            default:
+                break;
         }
 
     }

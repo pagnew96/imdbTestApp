@@ -10,24 +10,11 @@ public class home extends javax.swing.JFrame implements ActionListener {
 
     // Variables declaration
     private JCheckBox[] boxes;
-    private javax.swing.JCheckBox directorCheck;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton searchButton;
     private javax.swing.JTextArea userDisplay;
     private javax.swing.JTextField userInput;
     private int checkboxFlag = 0;
     private Boolean directorFlag = false;
     private Boolean singleNumberRating = false;
-
 
     /**
      * Creates new form NewJFrame
@@ -44,21 +31,21 @@ public class home extends javax.swing.JFrame implements ActionListener {
      */
     private void initComponents() {
 
-        jPanel3 = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
+        JPanel jPanel3 = new JPanel();
+        JPanel jPanel1 = new JPanel();
+        JLabel jLabel1 = new JLabel();
+        JPanel jPanel2 = new JPanel();
+        JLabel jLabel2 = new JLabel();
+        JLabel jLabel4 = new JLabel();
+        JLabel jLabel5 = new JLabel();
+        JLabel jLabel6 = new JLabel();
+        JPanel jPanel4 = new JPanel();
         userInput = new javax.swing.JTextField();
-        directorCheck = new javax.swing.JCheckBox();
+        JCheckBox directorCheck = new JCheckBox();
         boxes = new javax.swing.JCheckBox[11];
-        jScrollPane1 = new javax.swing.JScrollPane();
+        JScrollPane jScrollPane1 = new JScrollPane();
         userDisplay = new javax.swing.JTextArea();
-        searchButton = new javax.swing.JButton();
+        JButton searchButton = new JButton();
 
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -84,7 +71,7 @@ public class home extends javax.swing.JFrame implements ActionListener {
 
         jPanel1.setBackground(new java.awt.Color(62, 120, 207));
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Times New Roman", Font.BOLD, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 51));
         jLabel1.setText("Mean Movie Adviser ");
 
@@ -109,19 +96,19 @@ public class home extends javax.swing.JFrame implements ActionListener {
 
         jPanel2.setBackground(new java.awt.Color(113, 168, 255));
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Times New Roman", Font.BOLD, 14)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Director ??");
 
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Times New Roman", Font.BOLD, 14)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Enter the fuckers name:");
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Times New Roman", Font.BOLD, 14)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("What range range is your shitty taste:");
 
-        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Times New Roman", Font.BOLD, 14)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Choose one/two numbers e.g. 10/6-10");
 
@@ -155,7 +142,7 @@ public class home extends javax.swing.JFrame implements ActionListener {
 
         jPanel4.setBackground(new java.awt.Color(245, 247, 253));
 
-        userInput.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        userInput.setFont(new java.awt.Font("Times New Roman", Font.PLAIN, 18)); // NOI18N
         userInput.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         userInput.setText("Cunts Name");
         userInput.addFocusListener(new FocusListener() {
@@ -177,7 +164,7 @@ public class home extends javax.swing.JFrame implements ActionListener {
         });
 
         directorCheck.setBackground(new java.awt.Color(245, 247, 253));
-        directorCheck.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        directorCheck.setFont(new java.awt.Font("Times New Roman", Font.BOLD, 14)); // NOI18N
         directorCheck.setText("Did they Direct movies u stupid Cunt");
         directorCheck.addActionListener(this);
         directorCheck.setActionCommand("Director");
@@ -196,7 +183,7 @@ public class home extends javax.swing.JFrame implements ActionListener {
         userDisplay.setEditable(false);
         jScrollPane1.setViewportView(userDisplay);
 
-        searchButton.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        searchButton.setFont(new java.awt.Font("Times New Roman", Font.BOLD, 14)); // NOI18N
         searchButton.setText("Search");
         searchButton.addActionListener(this);
         searchButton.setActionCommand("search");
@@ -299,8 +286,6 @@ public class home extends javax.swing.JFrame implements ActionListener {
         start.setVisible(true);
     }
 
-    //todo move all the checking functions in display form to hear and
-    // result choice and change display forms cunstructor n stuff
     @Override
     public void actionPerformed(ActionEvent e) {
         int checkCount = 0;

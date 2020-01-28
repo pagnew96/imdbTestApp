@@ -12,11 +12,6 @@ import java.awt.event.ActionListener;
  */
 public class displayForm extends javax.swing.JFrame implements ActionListener {
 
-    // Variables declaration - do not modify
-    private javax.swing.JButton forwardButton;
-    private javax.swing.JButton backButton;
-    private javax.swing.JButton searchButton;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
 
     private Person person;
@@ -79,119 +74,118 @@ public class displayForm extends javax.swing.JFrame implements ActionListener {
         JLabel jLabel28 = new JLabel();
         JLabel jLabel29 = new JLabel();
         JPanel jPanel2 = new JPanel();
-        forwardButton = new JButton();
-        backButton = new JButton();
-        searchButton = new JButton();
-        jScrollPane1 = new JScrollPane();
+        JButton forwardButton = new JButton();
+        JButton backButton = new JButton();
+        JButton searchButton = new JButton();
+        JScrollPane jScrollPane1 = new JScrollPane();
         jTextArea1 = new JTextArea();
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setBackground(new Color(255, 255, 255));
         setMinimumSize(new Dimension(860, 510));
 
-
         jPanel1.setLayout(new AbsoluteLayout());
 
-        jLabel1.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jLabel1.setIcon(new ImageIcon(getClass().getResource("/yes.png")));
         jPanel1.add(jLabel1, new AbsoluteConstraints(780, 390, 130, -1));
 
-        jLabel2.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jLabel2.setIcon(new ImageIcon(getClass().getResource("/yes.png")));
         jPanel1.add(jLabel2, new AbsoluteConstraints(0, 0, 130, -1));
 
-        jLabel3.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jLabel3.setIcon(new ImageIcon(getClass().getResource("/yes.png")));
         jPanel1.add(jLabel3, new AbsoluteConstraints(130, 0, 130, -1));
 
-        jLabel4.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jLabel4.setIcon(new ImageIcon(getClass().getResource("/yes.png")));
         jPanel1.add(jLabel4, new AbsoluteConstraints(260, 0, 130, -1));
 
-        jLabel5.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jLabel5.setIcon(new ImageIcon(getClass().getResource("/yes.png")));
         jPanel1.add(jLabel5, new AbsoluteConstraints(390, 0, 130, -1));
 
-        jLabel6.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jLabel6.setIcon(new ImageIcon(getClass().getResource("/yes.png")));
         jPanel1.add(jLabel6, new AbsoluteConstraints(520, 0, 130, -1));
 
-        jLabel7.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jLabel7.setIcon(new ImageIcon(getClass().getResource("/yes.png")));
         jPanel1.add(jLabel7, new AbsoluteConstraints(650, 0, 130, -1));
 
-        jLabel8.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jLabel8.setIcon(new ImageIcon(getClass().getResource("/yes.png")));
         jPanel1.add(jLabel8, new AbsoluteConstraints(780, 0, 130, -1));
 
-        jLabel9.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jLabel9.setIcon(new ImageIcon(getClass().getResource("/yes.png")));
         jPanel1.add(jLabel9, new AbsoluteConstraints(0, 130, 130, -1));
 
-        jLabel10.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jLabel10.setIcon(new ImageIcon(getClass().getResource("/yes.png")));
         jPanel1.add(jLabel10, new AbsoluteConstraints(0, 260, 130, -1));
 
-        jLabel11.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jLabel11.setIcon(new ImageIcon(getClass().getResource("/yes.png")));
         jPanel1.add(jLabel11, new AbsoluteConstraints(0, 390, 130, -1));
 
-        jLabel12.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jLabel12.setIcon(new ImageIcon(getClass().getResource("/yes.png")));
         jPanel1.add(jLabel12, new AbsoluteConstraints(130, 130, 130, -1));
 
-        jLabel13.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jLabel13.setIcon(new ImageIcon(getClass().getResource("/yes.png")));
         jPanel1.add(jLabel13, new AbsoluteConstraints(130, 260, 130, -1));
 
-        jLabel14.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jLabel14.setIcon(new ImageIcon(getClass().getResource("/yes.png")));
         jPanel1.add(jLabel14, new AbsoluteConstraints(130, 390, 130, -1));
 
-        jLabel15.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jLabel15.setIcon(new ImageIcon(getClass().getResource("/yes.png")));
         jPanel1.add(jLabel15, new AbsoluteConstraints(260, 130, 130, -1));
 
-        jLabel16.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jLabel16.setIcon(new ImageIcon(getClass().getResource("/yes.png")));
         jPanel1.add(jLabel16, new AbsoluteConstraints(260, 260, 130, -1));
 
-        jLabel17.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jLabel17.setIcon(new ImageIcon(getClass().getResource("/yes.png")));
         jPanel1.add(jLabel17, new AbsoluteConstraints(260, 390, 130, -1));
 
-        jLabel18.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jLabel18.setIcon(new ImageIcon(getClass().getResource("/yes.png")));
         jPanel1.add(jLabel18, new AbsoluteConstraints(390, 130, 130, -1));
 
-        jLabel19.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jLabel19.setIcon(new ImageIcon(getClass().getResource("/yes.png")));
         jPanel1.add(jLabel19, new AbsoluteConstraints(390, 260, 130, -1));
 
-        jLabel20.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jLabel20.setIcon(new ImageIcon(getClass().getResource("/yes.png")));
         jPanel1.add(jLabel20, new AbsoluteConstraints(390, 390, 130, -1));
 
-        jLabel21.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jLabel21.setIcon(new ImageIcon(getClass().getResource("/yes.png")));
         jPanel1.add(jLabel21, new AbsoluteConstraints(520, 130, 130, -1));
 
-        jLabel22.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jLabel22.setIcon(new ImageIcon(getClass().getResource("/yes.png")));
         jPanel1.add(jLabel22, new AbsoluteConstraints(520, 260, 130, -1));
 
-        jLabel23.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jLabel23.setIcon(new ImageIcon(getClass().getResource("/yes.png")));
         jPanel1.add(jLabel23, new AbsoluteConstraints(520, 260, 130, -1));
 
-        jLabel24.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jLabel24.setIcon(new ImageIcon(getClass().getResource("/yes.png")));
         jPanel1.add(jLabel24, new AbsoluteConstraints(520, 390, 130, -1));
 
-        jLabel25.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jLabel25.setIcon(new ImageIcon(getClass().getResource("/yes.png")));
         jPanel1.add(jLabel25, new AbsoluteConstraints(650, 130, 130, -1));
 
-        jLabel26.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jLabel26.setIcon(new ImageIcon(getClass().getResource("/yes.png")));
         jPanel1.add(jLabel26, new AbsoluteConstraints(650, 260, 130, -1));
 
-        jLabel27.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jLabel27.setIcon(new ImageIcon(getClass().getResource("/yes.png")));
         jPanel1.add(jLabel27, new AbsoluteConstraints(650, 390, 130, -1));
 
-        jLabel28.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jLabel28.setIcon(new ImageIcon(getClass().getResource("/yes.png")));
         jPanel1.add(jLabel28, new AbsoluteConstraints(780, 130, 130, -1));
 
-        jLabel29.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jLabel29.setIcon(new ImageIcon(getClass().getResource("/yes.png")));
         jPanel1.add(jLabel29, new AbsoluteConstraints(780, 260, 130, -1));
 
         jPanel2.setBackground(new Color(255, 255, 255, 0));
 
-        forwardButton.setFont(new Font("Times New Roman", 1, 18)); // NOI18N
+        forwardButton.setFont(new Font("Times New Roman", Font.BOLD, 18)); // NOI18N
         forwardButton.setText(">");
         forwardButton.addActionListener(this);
         forwardButton.setActionCommand("forward");
 
-        backButton.setFont(new Font("Times New Roman", 1, 18)); // NOI18N
+        backButton.setFont(new Font("Times New Roman", Font.BOLD, 18)); // NOI18N
         backButton.setText("<");
         backButton.addActionListener(this);
         backButton.setActionCommand("back");
 
-        searchButton.setFont(new Font("Times New Roman", 1, 14)); // NOI18N
+        searchButton.setFont(new Font("Times New Roman", Font.BOLD, 14)); // NOI18N
         searchButton.setText("New Search");
         searchButton.addActionListener(this);
         searchButton.setActionCommand("newSearch");
@@ -202,7 +196,7 @@ public class displayForm extends javax.swing.JFrame implements ActionListener {
         jTextArea1.setLineWrap(true);
         jTextArea1.setWrapStyleWord(true);
         Font f = jTextArea1.getFont();
-        Font f1 = new Font(f.getFontName(), f.getStyle(), f.getSize() + 4);
+        Font f1 = new Font(f.getFontName(), f.getStyle(), f.getSize() + 3);
         jTextArea1.setFont(f1);
         jScrollPane1.setViewportView(jTextArea1);
 
@@ -276,8 +270,6 @@ public class displayForm extends javax.swing.JFrame implements ActionListener {
         Unirest.shutDown();
 
         genres = response.getGenres();
-        for (genre genre : genres)
-            System.out.println(genre.getName());
 
         if (crewFlag) {
             dirMovies = meanMovieAdviser.getRangeCrew(person, rangeHigh, rangeLow);
@@ -297,16 +289,16 @@ public class displayForm extends javax.swing.JFrame implements ActionListener {
 
         jTextArea1.append("The title of the movie: " + movie.getTitle() + "\n\n");
         jTextArea1.append("Movie genres: ");
-        for (int i = 0; i < genreId.length; i++) {
+        for (int value : genreId) {
             for (genre genre : genres) {
-                if (genreId[i] == genre.getId()) {
+                if (value == genre.getId()) {
                     jTextArea1.append(genre.getName() + ", ");
                 }
             }
         }
         jTextArea1.append("\n\n");
         jTextArea1.append("An overview of the movie: " + movie.getOverview() + "\n\n");
-        jTextArea1.append("Average rating out of 10: " + movie.getVote_average() + "/10" + "\n");
+        jTextArea1.append("Average rating out of 10: \t" + movie.getVote_average() + "/10" + "\n");
     }
 
     private void printCrew(Crew movie) {
@@ -315,16 +307,16 @@ public class displayForm extends javax.swing.JFrame implements ActionListener {
 
         jTextArea1.append("The title of the movie: " + movie.getTitle() + "\n\n");
         jTextArea1.append("Movie genres: ");
-        for (int i = 0; i < genreId.length; i++) {
+        for (int value : genreId) {
             for (genre genre : genres) {
-                if (genreId[i] == genre.getId()) {
+                if (value == genre.getId()) {
                     jTextArea1.append(genre.getName() + ", ");
                 }
             }
         }
         jTextArea1.append("\n\n");
         jTextArea1.append("An overview of the movie: " + movie.getOverview() + "\n\n");
-        jTextArea1.append("Average rating out of 10: " + movie.getVote_average() + "/10" + "\n");
+        jTextArea1.append("Average rating out of 10: \t" + movie.getVote_average() + "/10" + "\n");
     }
 
     @Override
@@ -335,7 +327,7 @@ public class displayForm extends javax.swing.JFrame implements ActionListener {
                 if (movieCounter > 0)
                     movieCounter--;
                 else
-                    movieCounter = meanMovieAdviser.getRangeMovieLength();
+                    movieCounter = meanMovieAdviser.getRangeMovieLength() - 1;
 
                 if (crewFlag)
                     printCrew(dirMovies[movieCounter]);
@@ -344,29 +336,25 @@ public class displayForm extends javax.swing.JFrame implements ActionListener {
 
                 break;
             case "forward":
+                if (movieCounter == meanMovieAdviser.getRangeMovieLength() - 1)
+                    movieCounter = 0;
+                else
+                    movieCounter++;
 
+                if (crewFlag)
+                    printCrew(dirMovies[movieCounter]);
+                else
+                    printCast(actorMovies[movieCounter]);
 
+                break;
+
+            case "newSearch":
+                new home().setVisible(true);
+                this.setVisible(false);
+
+            default:
+                break;
         }
-    }
-
-    public Person getPerson() {
-        return person;
-    }
-
-    public Boolean getCrewFlag() {
-        return crewFlag;
-    }
-
-    public int getRangeLow() {
-        return rangeLow;
-    }
-
-    public int getRangeHigh() {
-        return rangeHigh;
-    }
-
-    public void setForwardButton(JButton forwardButton) {
-        this.forwardButton = forwardButton;
     }
 
     public void setPerson(Person person) {
