@@ -21,20 +21,6 @@ public class meanMovieAdviser {
         return person;
     }
 
-    // TODO: 14/01/2020 chang void and return string for manipulation
-    public void printCast(Cast[] casts) {
-        System.out.println(casts.length);
-        System.out.println("**********");
-        for (Cast cast : casts) {
-            //printRating(cast);
-            //System.out.println(cast.getId());
-        }
-    }
-
-    public void printRating(Cast cast) {
-        System.out.println(cast.getVote_average());
-    }
-
     public String personsName(String userInput) {
         setInputName(userInput);
         final String invalidOutput = "## Letters & spaces only you fucking nonce!";

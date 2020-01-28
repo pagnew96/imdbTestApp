@@ -1,11 +1,11 @@
 import kong.unirest.Unirest;
+import org.netbeans.lib.awtextra.AbsoluteConstraints;
+import org.netbeans.lib.awtextra.AbsoluteLayout;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author Padraic
@@ -24,7 +24,6 @@ public class displayForm extends javax.swing.JFrame implements ActionListener {
     private int rangeLow;
     private int rangeHigh;
     private int movieCounter = 0;
-    private int rangeMovieLength;
     private genre[] genres;
 
     /**
@@ -78,119 +77,119 @@ public class displayForm extends javax.swing.JFrame implements ActionListener {
         JLabel jLabel28 = new JLabel();
         JLabel jLabel29 = new JLabel();
         JPanel jPanel2 = new JPanel();
-        forwardButton = new javax.swing.JButton();
-        backButton = new javax.swing.JButton();
-        searchButton = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        forwardButton = new JButton();
+        backButton = new JButton();
+        searchButton = new JButton();
+        jScrollPane1 = new JScrollPane();
+        jTextArea1 = new JTextArea();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(255, 255, 255));
-        setMinimumSize(new java.awt.Dimension(860, 510));
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new Color(255, 255, 255));
+        setMinimumSize(new Dimension(860, 510));
 
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.setLayout(new AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 390, 130, -1));
+        jLabel1.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jPanel1.add(jLabel1, new AbsoluteConstraints(780, 390, 130, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, -1));
+        jLabel2.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jPanel1.add(jLabel2, new AbsoluteConstraints(0, 0, 130, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, 130, -1));
+        jLabel3.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jPanel1.add(jLabel3, new AbsoluteConstraints(130, 0, 130, -1));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, 130, -1));
+        jLabel4.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jPanel1.add(jLabel4, new AbsoluteConstraints(260, 0, 130, -1));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 0, 130, -1));
+        jLabel5.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jPanel1.add(jLabel5, new AbsoluteConstraints(390, 0, 130, -1));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 0, 130, -1));
+        jLabel6.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jPanel1.add(jLabel6, new AbsoluteConstraints(520, 0, 130, -1));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 0, 130, -1));
+        jLabel7.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jPanel1.add(jLabel7, new AbsoluteConstraints(650, 0, 130, -1));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 0, 130, -1));
+        jLabel8.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jPanel1.add(jLabel8, new AbsoluteConstraints(780, 0, 130, -1));
 
-        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 130, -1));
+        jLabel9.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jPanel1.add(jLabel9, new AbsoluteConstraints(0, 130, 130, -1));
 
-        jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 130, -1));
+        jLabel10.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jPanel1.add(jLabel10, new AbsoluteConstraints(0, 260, 130, -1));
 
-        jLabel11.setIcon(new javax.swing.ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 130, -1));
+        jLabel11.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jPanel1.add(jLabel11, new AbsoluteConstraints(0, 390, 130, -1));
 
-        jLabel12.setIcon(new javax.swing.ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 130, -1));
+        jLabel12.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jPanel1.add(jLabel12, new AbsoluteConstraints(130, 130, 130, -1));
 
-        jLabel13.setIcon(new javax.swing.ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, 130, -1));
+        jLabel13.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jPanel1.add(jLabel13, new AbsoluteConstraints(130, 260, 130, -1));
 
-        jLabel14.setIcon(new javax.swing.ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 390, 130, -1));
+        jLabel14.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jPanel1.add(jLabel14, new AbsoluteConstraints(130, 390, 130, -1));
 
-        jLabel15.setIcon(new javax.swing.ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, 130, -1));
+        jLabel15.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jPanel1.add(jLabel15, new AbsoluteConstraints(260, 130, 130, -1));
 
-        jLabel16.setIcon(new javax.swing.ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
-        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 260, 130, -1));
+        jLabel16.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jPanel1.add(jLabel16, new AbsoluteConstraints(260, 260, 130, -1));
 
-        jLabel17.setIcon(new javax.swing.ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
-        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 390, 130, -1));
+        jLabel17.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jPanel1.add(jLabel17, new AbsoluteConstraints(260, 390, 130, -1));
 
-        jLabel18.setIcon(new javax.swing.ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
-        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 130, 130, -1));
+        jLabel18.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jPanel1.add(jLabel18, new AbsoluteConstraints(390, 130, 130, -1));
 
-        jLabel19.setIcon(new javax.swing.ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
-        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 260, 130, -1));
+        jLabel19.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jPanel1.add(jLabel19, new AbsoluteConstraints(390, 260, 130, -1));
 
-        jLabel20.setIcon(new javax.swing.ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
-        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 390, 130, -1));
+        jLabel20.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jPanel1.add(jLabel20, new AbsoluteConstraints(390, 390, 130, -1));
 
-        jLabel21.setIcon(new javax.swing.ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
-        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 130, 130, -1));
+        jLabel21.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jPanel1.add(jLabel21, new AbsoluteConstraints(520, 130, 130, -1));
 
-        jLabel22.setIcon(new javax.swing.ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
-        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 260, 130, -1));
+        jLabel22.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jPanel1.add(jLabel22, new AbsoluteConstraints(520, 260, 130, -1));
 
-        jLabel23.setIcon(new javax.swing.ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
-        jPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 260, 130, -1));
+        jLabel23.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jPanel1.add(jLabel23, new AbsoluteConstraints(520, 260, 130, -1));
 
-        jLabel24.setIcon(new javax.swing.ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
-        jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 390, 130, -1));
+        jLabel24.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jPanel1.add(jLabel24, new AbsoluteConstraints(520, 390, 130, -1));
 
-        jLabel25.setIcon(new javax.swing.ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
-        jPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 130, 130, -1));
+        jLabel25.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jPanel1.add(jLabel25, new AbsoluteConstraints(650, 130, 130, -1));
 
-        jLabel26.setIcon(new javax.swing.ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
-        jPanel1.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 260, 130, -1));
+        jLabel26.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jPanel1.add(jLabel26, new AbsoluteConstraints(650, 260, 130, -1));
 
-        jLabel27.setIcon(new javax.swing.ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
-        jPanel1.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 390, 130, -1));
+        jLabel27.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jPanel1.add(jLabel27, new AbsoluteConstraints(650, 390, 130, -1));
 
-        jLabel28.setIcon(new javax.swing.ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
-        jPanel1.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 130, 130, -1));
+        jLabel28.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jPanel1.add(jLabel28, new AbsoluteConstraints(780, 130, 130, -1));
 
-        jLabel29.setIcon(new javax.swing.ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
-        jPanel1.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 260, 130, -1));
+        jLabel29.setIcon(new ImageIcon("C:\\Users\\Padraic\\Documents\\imdbTestApp\\src\\main\\resources\\yes.png")); // NOI18N
+        jPanel1.add(jLabel29, new AbsoluteConstraints(780, 260, 130, -1));
 
         jPanel2.setBackground(new Color(255, 255, 255, 0));
 
-        forwardButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        forwardButton.setFont(new Font("Times New Roman", 1, 18)); // NOI18N
         forwardButton.setText(">");
         forwardButton.addActionListener(this);
         forwardButton.setActionCommand("forward");
 
-        backButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        backButton.setFont(new Font("Times New Roman", 1, 18)); // NOI18N
         backButton.setText("<");
         backButton.addActionListener(this);
         backButton.setActionCommand("back");
 
-        searchButton.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        searchButton.setFont(new Font("Times New Roman", 1, 14)); // NOI18N
         searchButton.setText("New Search");
         searchButton.addActionListener(this);
         searchButton.setActionCommand("newSearch");
@@ -205,67 +204,67 @@ public class displayForm extends javax.swing.JFrame implements ActionListener {
         jTextArea1.setFont(f1);
         jScrollPane1.setViewportView(jTextArea1);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        GroupLayout jPanel2Layout = new GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
-                jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                jPanel2Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(backButton)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jScrollPane1, GroupLayout.PREFERRED_SIZE, 370, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel2Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                        .addGroup(GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                                 .addComponent(searchButton)
                                                 .addContainerGap())
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                        .addGroup(GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                                 .addComponent(forwardButton)
                                                 .addGap(34, 34, 34))))
         );
         jPanel2Layout.setVerticalGroup(
-                jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                jPanel2Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
                                         .addGroup(jPanel2Layout.createSequentialGroup()
                                                 .addGap(24, 24, 24)
                                                 .addComponent(jScrollPane1))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                        .addGroup(GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                                                 .addContainerGap(248, Short.MAX_VALUE)
                                                 .addComponent(forwardButton)
                                                 .addGap(181, 181, 181)
-                                                .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addComponent(searchButton, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)))
                                 .addGap(23, 23, 23))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGroup(GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(backButton)
                                 .addGap(243, 243, 243))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jPanel2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                                 .addGroup(layout.createSequentialGroup()
                                         .addContainerGap()
-                                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jPanel1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addContainerGap()))
         );
         layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jPanel2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                                 .addGroup(layout.createSequentialGroup()
                                         .addContainerGap()
-                                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jPanel1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addContainerGap()))
         );
 
@@ -290,42 +289,6 @@ public class displayForm extends javax.swing.JFrame implements ActionListener {
         this.setLocationRelativeTo(null);
     }
 
-    private Cast[] getRangeCast(Person person, int high, int low) {
-        List<Cast> rangedMoviesList = new ArrayList<>();
-        Cast[] movies = person.getCast();
-        int i = 0;
-
-        for (Cast c : movies) {
-            if ((int) c.getVote_average() >= low && (int) c.getVote_average() <= high) {
-                rangedMoviesList.add(c);
-                i++;
-            }
-        }
-
-        Cast[] rangeMovies = rangedMoviesList.toArray(new Cast[rangedMoviesList.size()]);
-        rangeMovieLength = rangeMovies.length;
-
-        return rangeMovies;
-    }
-
-    private Crew[] getRangeCrew(Person person, int high, int low) {
-        List<Crew> rangedMoviesList = new ArrayList<>();
-        Crew[] movies = person.getCrew();
-        int i = 0;
-
-        for (Crew c : movies) {
-            if ((int) c.getVote_average() >= low && (int) c.getVote_average() <= high) {
-                rangedMoviesList.add(c);
-                i++;
-            }
-        }
-
-        Crew[] rangeMovies = rangedMoviesList.toArray(new Crew[rangedMoviesList.size()]);
-        rangeMovieLength = rangeMovies.length;
-
-        return rangeMovies;
-    }
-
     private void printCast(Cast movie) {
         int[] genreId = movie.getGenre_ids();
         jTextArea1.setText("");
@@ -342,18 +305,25 @@ public class displayForm extends javax.swing.JFrame implements ActionListener {
         jTextArea1.append("\n\n");
         jTextArea1.append("An overview of the movie: " + movie.getOverview() + "\n\n");
         jTextArea1.append("Average rating out of 10: " + movie.getVote_average() + "/10" + "\n");
-
     }
 
-    private void printCrew(Crew movies) {
-        jTextArea1.append("The title of the movie: ");
-        jTextArea1.append(movies.getTitle());
-        jTextArea1.append(Integer.toString(rangeMovieLength));
-    }
+    private void printCrew(Crew movie) {
+        int[] genreId = movie.getGenre_ids();
+        jTextArea1.setText("");
 
-    //todo add function to get our array to work with with ratings taken into effect
-    // add function to populate the display area,
-    // add the switch case functionality and once thats done its cleanup time and were done
+        jTextArea1.append("The title of the movie: " + movie.getTitle() + "\n\n");
+        jTextArea1.append("Movie genres: ");
+        for (int i = 0; i < genreId.length; i++) {
+            for (genre genre : genres) {
+                if (genreId[i] == genre.getId()) {
+                    jTextArea1.append(genre.getName() + ", ");
+                }
+            }
+        }
+        jTextArea1.append("\n\n");
+        jTextArea1.append("An overview of the movie: " + movie.getOverview() + "\n\n");
+        jTextArea1.append("Average rating out of 10: " + movie.getVote_average() + "/10" + "\n");
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {

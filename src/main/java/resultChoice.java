@@ -142,7 +142,6 @@ public class resultChoice extends javax.swing.JFrame implements ActionListener {
         if (e.getActionCommand().equals("search")) {
             int index = userChoice.getSelectedIndex();
             Person person = prick.mapPerson(Integer.toString(results[index].getId()));
-            prick.printCast(person.getCast());
             new displayForm(person, directorFlag, low, high).setVisible(true);
             this.setVisible(false);
         }
