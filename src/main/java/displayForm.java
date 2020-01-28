@@ -25,6 +25,8 @@ public class displayForm extends javax.swing.JFrame implements ActionListener {
     private int rangeHigh;
     private int movieCounter = 0;
     private genre[] genres;
+    private Crew[] dirMovies;
+    private Cast[] actorMovies;
 
     /**
      * Creates new form displayForm
@@ -278,11 +280,11 @@ public class displayForm extends javax.swing.JFrame implements ActionListener {
             System.out.println(genre.getName());
 
         if (crewFlag) {
-            Crew[] movies = getRangeCrew(person, rangeHigh, rangeLow);
-            printCrew(movies[movieCounter]);
+            dirMovies = meanMovieAdviser.getRangeCrew(person, rangeHigh, rangeLow);
+            printCrew(dirMovies[movieCounter]);
         } else {
-            Cast[] movies = getRangeCast(person, rangeHigh, rangeLow);
-            printCast(movies[movieCounter]);
+            actorMovies = meanMovieAdviser.getRangeCast(person, rangeHigh, rangeLow);
+            printCast(actorMovies[movieCounter]);
         }
 
         pack();
@@ -330,6 +332,19 @@ public class displayForm extends javax.swing.JFrame implements ActionListener {
         String cmd = e.getActionCommand();
         switch (cmd) {
             case "back":
+                if (movieCounter > 0)
+                    movieCounter--;
+                else
+                    movieCounter = meanMovieAdviser.getRangeMovieLength();
+
+                if (crewFlag)
+                    printCrew(dirMovies[movieCounter]);
+                else
+                    printCast(actorMovies[movieCounter]);
+
+                break;
+            case "forward":
+
 
         }
     }

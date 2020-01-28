@@ -12,7 +12,6 @@ public class resultChoice extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JButton returnButton;
     private JComboBox<String> userChoice;
     private Result[] results;
-    private meanMovieAdviser prick;
     private boolean directorFlag;
     private int low, high;
 
@@ -20,9 +19,8 @@ public class resultChoice extends javax.swing.JFrame implements ActionListener {
     /**
      * Creates new form resultChoice
      */
-    public resultChoice(Result[] results, meanMovieAdviser prick, boolean directorFlag, int low, int high) {
+    public resultChoice(Result[] results, boolean directorFlag, int low, int high) {
         this.setResults(results);
-        this.setPrick(prick);
         this.setDirectorFlag(directorFlag);
         this.setLow(low);
         this.setHigh(high);
@@ -141,19 +139,28 @@ public class resultChoice extends javax.swing.JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("search")) {
             int index = userChoice.getSelectedIndex();
-            Person person = prick.mapPerson(Integer.toString(results[index].getId()));
-            new displayForm(person, directorFlag, low, high).setVisible(true);
-            this.setVisible(false);
+            Person person = meanMovieAdviser.mapPerson(Integer.toString(results[index].getId()));
+            if (directorFlag) {
+                if (meanMovieAdviser.getRangeCrew(person, high, low) != null) {
+                    new displayForm(person, directorFlag, low, high);
+                    this.setVisible(false);
+                } else {
+                    displayText.setText(meanMovieAdviser.notDirString);
+                }
+            } else {
+                if (meanMovieAdviser.getRangeCast(person, high, low) != null) {
+                    new displayForm(person, directorFlag, low, high);
+                    this.setVisible(false);
+                } else {
+                    displayText.setText(meanMovieAdviser.notActorString);
+                }
+            }
         }
 
     }
 
     public void setResults(Result[] results) {
         this.results = results;
-    }
-
-    public void setPrick(meanMovieAdviser prick) {
-        this.prick = prick;
     }
 
     public void setDirectorFlag(boolean directorFlag) {

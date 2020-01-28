@@ -4,8 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class home extends javax.swing.JFrame implements ActionListener {
@@ -29,21 +27,6 @@ public class home extends javax.swing.JFrame implements ActionListener {
     private int checkboxFlag = 0;
     private Boolean directorFlag = false;
     private Boolean singleNumberRating = false;
-    private int rangeMovieLength;
-
-    final String emptySearchResult = "## You caused the program to shit the bed good going dumbass,\n" +
-            "## One of the following is the reason why:\n" +
-            "## A: The Person you searched is not on the TMDB database.\n" +
-            "## B: You cant spell for shit (Most likely the reason)";
-    final String notDirString = " ## Why can you not follow simple instructions you pleb.\n" +
-            "## One of the following issues arose:\n" +
-            "## A: The person you searched isn't a director so uncheck that u idiotic peice of human shit.\n" +
-            "## B: There are no movies in the range you searched for.";
-    final String notActorString = "## Are you fucking stupid, are you purposefully trying to break this app??\n" +
-            "## Plz for the love of god fix one of the following things: \n" +
-            "## There are no movies in the range you are searching for. \n" +
-            "## The person you searched for is not an actor or is so shit he/she" +
-            " isn't worthy to be stored on the database.";
 
 
     /**
@@ -316,40 +299,6 @@ public class home extends javax.swing.JFrame implements ActionListener {
         start.setVisible(true);
     }
 
-    public Cast[] getRangeCast(Person person, int high, int low) {
-        java.util.List<Cast> rangedMoviesList = new ArrayList<>();
-        Cast[] movies = person.getCast();
-
-        for (Cast c : movies) {
-            if ((int) c.getVote_average() >= low && (int) c.getVote_average() <= high) {
-                rangedMoviesList.add(c);
-            }
-        }
-
-        Cast[] rangeMovies = rangedMoviesList.toArray(new Cast[rangedMoviesList.size()]);
-        rangeMovieLength = rangeMovies.length;
-
-        return rangeMovies;
-    }
-
-    public Crew[] getRangeCrew(Person person, int high, int low) {
-        List<Crew> rangedMoviesList = new ArrayList<>();
-        Crew[] movies = person.getCrew();
-
-        for (Crew c : movies) {
-            if (c.getJob().equals("Director")) {
-                if ((int) c.getVote_average() >= low && (int) c.getVote_average() <= high) {
-                    rangedMoviesList.add(c);
-                }
-            }
-        }
-
-        Crew[] rangeMovies = rangedMoviesList.toArray(new Crew[rangedMoviesList.size()]);
-        rangeMovieLength = rangeMovies.length;
-
-        return rangeMovies;
-    }
-
     //todo move all the checking functions in display form to hear and
     // result choice and change display forms cunstructor n stuff
     @Override
@@ -388,7 +337,6 @@ public class home extends javax.swing.JFrame implements ActionListener {
                 directorFlag = !directorFlag;
                 break;
             case "search":
-                meanMovieAdviser prick = new meanMovieAdviser();
                 Person person;
                 Result[] result;
 
@@ -404,33 +352,33 @@ public class home extends javax.swing.JFrame implements ActionListener {
                     }
                 }
 
-                error = prick.personsName(userInput.getText());
+                error = meanMovieAdviser.personsName(userInput.getText());
                 if (error == null) {
-                    if (prick.personSearch(prick.getName()) != null) {
-                        result = prick.personSearch(prick.getName());
+                    if (meanMovieAdviser.personSearch(meanMovieAdviser.getName()) != null) {
+                        result = meanMovieAdviser.personSearch(meanMovieAdviser.getName());
                         if (result.length == 1) {
-                            person = prick.mapPerson(Integer.toString(result[0].getId()));
+                            person = meanMovieAdviser.mapPerson(Integer.toString(result[0].getId()));
                             if (directorFlag) {
-                                if (getRangeCrew(person, high, low) != null) {
+                                if (meanMovieAdviser.getRangeCrew(person, high, low) != null) {
                                     new displayForm(person, directorFlag, low, high);
                                     this.setVisible(false);
                                 } else {
-                                    userDisplay.setText(notDirString);
+                                    userDisplay.setText(meanMovieAdviser.notDirString);
                                 }
                             } else {
-                                if (getRangeCast(person, high, low) != null) {
+                                if (meanMovieAdviser.getRangeCast(person, high, low) != null) {
                                     new displayForm(person, directorFlag, low, high);
                                     this.setVisible(false);
                                 } else {
-                                    userDisplay.setText(notActorString);
+                                    userDisplay.setText(meanMovieAdviser.notActorString);
                                 }
                             }
                         } else {
-                            new resultChoice(result, prick, directorFlag, low, high);
+                            new resultChoice(result, directorFlag, low, high);
                             this.setVisible(false);
                         }
                     } else
-                        userDisplay.setText(emptySearchResult);
+                        userDisplay.setText(meanMovieAdviser.emptySearchResult);
                 } else {
                     userDisplay.setText(error);
                     break;
